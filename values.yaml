@@ -1,0 +1,6 @@
+mockserverpath:
+  - mockname: "/template"
+    mockport: 1025
+  - mockname: "/partner"
+    mockport: 1026
+  
