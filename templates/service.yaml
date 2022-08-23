@@ -1,0 +1,12 @@
+{{ range .Values.mockserver }}
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .mockname }}
+spec:
+  selector:
+    app: mockserver
+  ports:
+    - port: {{ .mockport }}
+---
+{{ end }}

@@ -8,19 +8,12 @@ spec:
   rules:
   - http:
       paths:
-      {{ range .Values.mockserverpath }}
-        - path: {{ .mockname }}
+      {{ range .Values.mockserver }}
+        - path: {{ printf "/%s" .mockname }}
           pathType: Prefix
           backend:
             service:
-              name: mockserver
+              name: {{ .mockname }}
               port: 
                 number: {{ .mockport }}
-              {{- end }}
-        # - path: /banana
-        #   pathType: Prefix
-        #   backend:
-        #     service:
-        #       name: banana-service
-        #       port: 
-        #         number: 5678
+              {{ end }}

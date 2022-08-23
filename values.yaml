@@ -1,6 +1,9 @@
-mockserverpath:
-  - mockname: "/template"
+host: mockserver
+domain: gfm-dev.com
+
+mockserver:
+  - mockname: "template"
     mockport: 1025
-  - mockname: "/partner"
+  - mockname: "partner"
     mockport: 1026
   
